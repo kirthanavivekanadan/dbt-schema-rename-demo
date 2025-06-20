@@ -27,9 +27,9 @@ customers_data = {
     "signup_date": ["2021-01-01", "2021-02-15", "2021-03-22"]
 } ``
 
-# Similar data for products and orders...
+### Similar data for products and orders...
 
-# Export to CSV files and upload to Snowflake internal stages
+### Export to CSV files and upload to Snowflake internal stages
 
 
 ## Metadata Table Example
@@ -51,12 +51,12 @@ VALUES (
     'ACTIVE'
 );
 
-##Macro Usage
+## Macro Usage
 Run the macro to apply the rename and rebuild views:
 dbt run-operation rename_and_rebuild --args '{"model_name": "raw.dim_customers", "source_table": "raw.customer"}'
 
 
-##How It Works
+## How It Works
 - The macro queries the metadata table for any columns marked ACTIVE to rename.
 
 - It then describes the source table to get the current columns.
@@ -68,7 +68,7 @@ dbt run-operation rename_and_rebuild --args '{"model_name": "raw.dim_customers",
 - Finally, the metadata can be updated to mark changes as handled.
 
 
-##Future Enhancements
+## Future Enhancements
 - Handling column type changes
 
 - Detecting added or dropped columns

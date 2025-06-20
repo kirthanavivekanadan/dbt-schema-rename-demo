@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Cleaned customer dimension table"
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_orders
+    description: "Fact table containing order-level metrics"
+    columns:
+      - name: order_id
+        tests:
+          - not_null
